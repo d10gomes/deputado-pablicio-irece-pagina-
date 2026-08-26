@@ -51,9 +51,30 @@ recrie apontando pra outro projeto Supabase).
   leads. Qualquer botão pode abrir com `const { openModal } = useLeadModal()`.
 - `src/lib/video.ts` — detecta se o link colado em `content.ts > videoUrl` é YouTube, Vimeo
   ou um arquivo de vídeo direto (.mp4/.webm) e monta o embed certo.
-- `src/assets/pablicio-foto.jpg` — foto oficial do candidato
+- `src/assets/pablicio-foto.jpg` — foto original do candidato (fundo branco de estúdio)
+- `src/assets/pablicio-cutout.png` — a mesma foto **sem fundo** (recortada com IA, rembg
+  modelo `u2net_human_seg`), usada no Hero. Se precisar recortar outra foto, veja o processo
+  abaixo.
 - `src/assets/ideias-centrais.png` — infográfico de referência (não usado diretamente na
   página, os textos foram extraídos para `content.ts`)
+
+### Como recortar uma nova foto (remover fundo)
+
+```bash
+pip install rembg onnxruntime pillow
+python -c "
+from rembg import remove, new_session
+from PIL import Image
+session = new_session('u2net_human_seg')  # modelo leve, ~176MB, roda bem em CPU
+img = remove(Image.open('foto-original.jpg'), session=session, alpha_matting=True,
+             alpha_matting_foreground_threshold=240, alpha_matting_background_threshold=10,
+             alpha_matting_erode_size=5)
+img.crop(img.getbbox()).save('foto-cutout.png')
+"
+```
+
+Evite o modelo padrão do rembg (`birefnet`/`bria-rmbg`, ~1GB) — ele estourou memória nesta
+máquina. `u2net_human_seg` é bem mais leve e já dá conta de recorte de retrato/corpo inteiro.
 
 ## Mobile-first
 

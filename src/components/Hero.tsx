@@ -1,7 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { candidato, bio } from "../data/content";
 import { useLeadModal } from "../context/LeadModalContext";
-import fotoPablicio from "../assets/pablicio-foto.jpg";
+import fotoPablicio from "../assets/pablicio-cutout.png";
 
 export default function Hero() {
   const { openModal } = useLeadModal();
@@ -46,15 +46,18 @@ export default function Hero() {
         </div>
 
         <div className="order-1 md:order-2 flex flex-col items-center">
-          <div className="relative">
-            <div className="absolute -inset-2 sm:-inset-3 rounded-[1.5rem] sm:rounded-[2rem] bg-gradient-to-br from-[#f2cb05] via-[#03a63c] to-[#0339a6] opacity-70 blur-md" />
+          <div className="relative flex justify-center w-full">
+            {/* glow colorido atrás da figura, no lugar da antiga caixa branca */}
+            <div className="absolute top-4 w-48 h-48 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-[#f2cb05] via-[#03a63c] to-[#0339a6] opacity-50 blur-3xl" />
+            {/* sombra de "chão" sob os pés */}
+            <div className="absolute bottom-2 sm:bottom-4 w-32 sm:w-48 h-5 sm:h-7 bg-black/40 rounded-[50%] blur-lg" />
             <img
               src={fotoPablicio}
               alt={candidato.nome}
-              className="relative w-40 sm:w-64 md:w-80 rounded-2xl sm:rounded-[1.75rem] shadow-2xl object-cover ring-1 ring-white/20"
+              className="relative w-48 sm:w-72 md:w-[22rem] object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.45)]"
             />
           </div>
-          <div className="mt-4 sm:mt-7 text-center">
+          <div className="mt-1 sm:mt-2 text-center">
             <div className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-[#f2cb05] drop-shadow-sm">
               {candidato.numero}
             </div>
