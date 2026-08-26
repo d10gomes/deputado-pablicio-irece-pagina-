@@ -2,10 +2,19 @@
 
 ## O que é
 
-Landing page de campanha para **Dr. Pablício Medeiros**, pré-candidato a **Deputado Federal
+Landing page de campanha para **Dr. Pablício Medeiros**, candidato a **Deputado Federal
 pela Bahia** (número 2201, Partido Liberal - PL). Baseada no formato/estrutura da página
 militaodourado.com.br (storytelling + biografia + plano de governo + captação de leads via
 popup conectado ao Supabase + WhatsApp).
+
+## TSE — status confirmado
+
+Registro de candidatura **já protocolado/deferido na Justiça Eleitoral** (confirmado com o
+responsável pela campanha em 26/08/2026). Por isso a página usa linguagem de campanha oficial
+("Vote 2201", pedido direto de voto) sem problema de propaganda antecipada. Se algum dia a
+situação mudar (ex: reaproveitar esse template pra outro candidato ainda em pré-candidatura),
+trocar "Vote 2201" e pedidos diretos de voto por linguagem de pré-campanha (só biografia e
+atuação, sem pedir voto/número) até o registro ser protocolado.
 
 ## Stack
 
