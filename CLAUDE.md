@@ -76,6 +76,19 @@ img.crop(img.getbbox()).save('foto-cutout.png')
 Evite o modelo padrão do rembg (`birefnet`/`bria-rmbg`, ~1GB) — ele estourou memória nesta
 máquina. `u2net_human_seg` é bem mais leve e já dá conta de recorte de retrato/corpo inteiro.
 
+## Compartilhamento (Open Graph) e favicon
+
+- `index.html` tem as meta tags `og:*` e `twitter:*` pra gerar prévia bonita quando o link é
+  compartilhado no WhatsApp/Instagram/Facebook — usa `public/og-image.jpg` (1200x630, gerado a
+  partir da foto sem fundo + identidade visual).
+- **IMPORTANTE:** antes de divulgar o link, troque `https://SEU-DOMINIO-AQUI` nessas tags pelo
+  domínio real (ex: `https://pabliciomedeiros.com.br`) — sem isso o WhatsApp não busca a
+  imagem, porque exige URL absoluta.
+- `public/favicon.svg` — ícone customizado com "2201" e as cores da campanha.
+- Pra gerar uma nova `og-image.jpg` (se trocar a foto do candidato), o script que a criou está
+  documentado no histórico do projeto — usa Pillow com a foto recortada
+  (`pablicio-cutout.png`) + texto renderizado por cima.
+
 ## Mobile-first
 
 A maior parte do tráfego chega pelo celular, então o layout foi feito mobile-first e revisado
