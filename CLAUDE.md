@@ -55,10 +55,29 @@ recrie apontando pra outro projeto Supabase).
 - `src/assets/ideias-centrais.png` — infográfico de referência (não usado diretamente na
   página, os textos foram extraídos para `content.ts`)
 
+## Mobile-first
+
+A maior parte do tráfego chega pelo celular, então o layout foi feito mobile-first e revisado
+em 375px (iPhone SE/mini) pra cima:
+
+- `src/components/StickyMobileCta.tsx` — barra fixa no rodapé, só no mobile (`md:hidden`),
+  com atalho direto pro WhatsApp e botão "Vote · Quero fazer parte" sempre visível durante o
+  scroll. Por causa dela, o `<div>` raiz do `App.tsx` tem `pb-[72px] md:pb-0` pra o rodapé da
+  página não ficar escondido atrás da barra.
+- `src/components/Modal.tsx` — no mobile abre como bottom-sheet (desliza de baixo pra cima,
+  cantos arredondados só em cima, alça de arrastar); no desktop (`sm:` pra cima) é o modal
+  centralizado tradicional.
+- `src/components/Reveal.tsx` — fade-in suave (Intersection Observer) ao rolar até cada
+  seção; respeita `prefers-reduced-motion`.
+- `src/components/CookieBanner.tsx` fica `bottom-[64px]` no mobile pra não tampar a
+  `StickyMobileCta`.
+
 ## Vídeo (VSL)
 
-Seção "A história dele" (`src/components/VideoVsl.tsx`), entre a seção de memória e a
-biografia. Pra ativar, cole o link em `src/data/content.ts > videoUrl` — aceita:
+Seção "A história dele" (`src/components/VideoVsl.tsx`) — **logo depois do Hero**, antes de
+qualquer outro conteúdo, pra quem chegar pelo link já ver o vídeo sem quase rolar a tela (pedido
+específico pra melhorar conversão em quem acessa pelo celular). Pra ativar, cole o link em
+`src/data/content.ts > videoUrl` — aceita:
 - Link do YouTube (qualquer formato: `watch?v=`, `youtu.be/`, `/shorts/`)
 - Link do Vimeo
 - Link direto de um arquivo `.mp4`/`.webm`/`.ogg`

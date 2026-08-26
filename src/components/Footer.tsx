@@ -21,15 +21,15 @@ function FacebookIcon() {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0e1b2a] text-white/70 pb-10 text-sm">
-      <div className="h-1 flex mb-10">
+    <footer className="bg-[#0e1b2a] text-white/70 pb-8 sm:pb-10 text-sm">
+      <div className="h-1 flex mb-8 sm:mb-10">
         <span className="flex-1 bg-[#f2cb05]" />
         <span className="flex-1 bg-[#03a63c]" />
         <span className="flex-1 bg-[#02732a]" />
         <span className="flex-1 bg-[#0339a6]" />
         <span className="flex-1 bg-[#022873]" />
       </div>
-      <div className="max-w-4xl mx-auto px-5 text-center space-y-3">
+      <div className="max-w-4xl mx-auto px-4 sm:px-5 text-center space-y-3 break-words">
         <p className="font-display font-bold text-white text-base">
           {candidato.nome.toUpperCase()}
         </p>

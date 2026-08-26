@@ -102,19 +102,19 @@ export default function LeadForm({ onDone }: { onDone?: () => void }) {
   }
 
   return (
-    <div className="p-6 md:p-10">
-      <p className="uppercase tracking-widest text-[#02732a] font-semibold text-sm mb-2 text-center">
+    <div className="px-5 pb-6 pt-2 sm:p-8 md:p-10">
+      <p className="uppercase tracking-widest text-[#02732a] font-semibold text-xs sm:text-sm mb-2 text-center">
         Sua parte
       </p>
-      <h2 className="font-display font-extrabold text-2xl md:text-3xl text-center mb-3 leading-tight">
+      <h2 className="font-display font-extrabold text-xl sm:text-2xl md:text-3xl text-center mb-2.5 sm:mb-3 leading-tight">
         Some com a gente.
       </h2>
-      <p className="text-center text-[#0e1b2a]/70 mb-8 text-sm md:text-base">
+      <p className="text-center text-[#0e1b2a]/70 mb-6 sm:mb-8 text-sm md:text-base">
         Você vai saber o que está acontecendo na sua cidade, em primeira mão. E sai da lista
         quando quiser. Leva menos de um minuto.
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
         <div>
           <label className="block text-sm font-semibold mb-1" htmlFor="nome">
             Seu nome *
@@ -142,7 +142,7 @@ export default function LeadForm({ onDone }: { onDone?: () => void }) {
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-semibold mb-1" htmlFor="cidade">
               Sua cidade *
@@ -181,13 +181,13 @@ export default function LeadForm({ onDone }: { onDone?: () => void }) {
           <p className="text-sm font-semibold mb-2">Como você quer participar</p>
           <div className="space-y-2">
             {PARTICIPACAO.map((op) => (
-              <label key={op} className="flex items-center gap-2 text-sm">
+              <label key={op} className="flex items-center gap-2.5 text-sm py-0.5">
                 <input
                   type="radio"
                   name="participacao"
                   checked={participacao === op}
                   onChange={() => setParticipacao(op)}
-                  className="accent-[#0339a6]"
+                  className="w-4 h-4 accent-[#0339a6] shrink-0"
                 />
                 {op}
               </label>
@@ -203,7 +203,7 @@ export default function LeadForm({ onDone }: { onDone?: () => void }) {
                 type="button"
                 key={tema}
                 onClick={() => toggleTema(tema)}
-                className={`text-xs font-semibold rounded-full px-3 py-1.5 border transition ${
+                className={`text-xs font-semibold rounded-full px-3.5 py-2 border transition active:scale-95 ${
                   temas.includes(tema)
                     ? "bg-[#022873] text-white border-[#022873]"
                     : "border-[#e5e4e7] text-[#0e1b2a]/70 hover:border-[#0339a6]"

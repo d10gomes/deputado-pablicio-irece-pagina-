@@ -1,3 +1,4 @@
+import { ChevronDown } from "lucide-react";
 import { candidato, bio } from "../data/content";
 import { useLeadModal } from "../context/LeadModalContext";
 import fotoPablicio from "../assets/pablicio-foto.jpg";
@@ -6,57 +7,60 @@ export default function Hero() {
   const { openModal } = useLeadModal();
 
   return (
-    <section className="relative bg-gradient-to-br from-[#022873] via-[#022873] to-[#0339a6] text-white pt-32 pb-20 overflow-hidden">
-      <div className="pointer-events-none absolute -top-32 -right-20 w-96 h-96 rounded-full bg-[#03a63c]/25 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 -left-24 w-80 h-80 rounded-full bg-[#f2cb05]/15 blur-3xl" />
+    <section className="relative bg-gradient-to-br from-[#022873] via-[#022873] to-[#0339a6] text-white pt-20 sm:pt-28 md:pt-32 pb-10 sm:pb-16 md:pb-20 overflow-hidden">
+      <div className="pointer-events-none absolute -top-24 -right-16 w-64 h-64 sm:w-96 sm:h-96 rounded-full bg-[#03a63c]/25 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 -left-16 w-56 h-56 sm:w-80 sm:h-80 rounded-full bg-[#f2cb05]/15 blur-3xl" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.06)_1px,transparent_0)] [background-size:28px_28px]" />
 
-      <div className="relative max-w-6xl mx-auto px-5 grid md:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
-        <div className="text-center md:text-left order-2 md:order-1">
-          <p className="inline-flex items-center gap-2 uppercase tracking-widest text-[#f2cb05] font-semibold text-xs sm:text-sm mb-4 rounded-full border border-[#f2cb05]/30 bg-[#f2cb05]/10 px-4 py-1.5">
-            Candidato a {candidato.cargo} · {candidato.partido} ({candidato.partidoSigla})
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-5 grid md:grid-cols-[1.1fr_0.9fr] gap-6 sm:gap-10 md:gap-12 items-center">
+        <div className="order-2 md:order-1 text-center md:text-left">
+          <p className="inline-flex items-center gap-2 uppercase tracking-widest text-[#f2cb05] font-semibold text-[11px] sm:text-sm mb-3 sm:mb-4 rounded-full border border-[#f2cb05]/30 bg-[#f2cb05]/10 px-3.5 py-1.5">
+            {candidato.cargo} · {candidato.partido} ({candidato.partidoSigla})
           </p>
-          <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl leading-[1.05] mb-6 bg-gradient-to-r from-white via-white to-[#f2cb05]/90 bg-clip-text text-transparent">
+          <h1 className="font-display font-extrabold text-[2rem] leading-[1.08] sm:text-5xl md:text-6xl sm:leading-[1.05] mb-4 sm:mb-6 bg-gradient-to-r from-white via-white to-[#f2cb05]/90 bg-clip-text text-transparent">
             {candidato.nome.toUpperCase()}
           </h1>
 
-          <p className="text-lg sm:text-xl font-semibold mb-3 text-white/95">
+          <p className="text-base sm:text-xl font-semibold mb-2.5 sm:mb-3 text-white/95">
             {bio.fraseAbertura}
           </p>
-          <p className="text-white/75 mb-9 max-w-xl mx-auto md:mx-0">
+          <p className="text-sm sm:text-base text-white/75 mb-6 sm:mb-9 max-w-xl mx-auto md:mx-0">
             {bio.aberturaTexto}
           </p>
 
-          <div className="flex flex-wrap gap-4 items-center justify-center md:justify-start">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
             <button
               onClick={openModal}
-              className="bg-[#f2cb05] text-[#022873] font-display font-bold px-7 py-3.5 rounded-full hover:brightness-95 hover:scale-[1.02] transition shadow-lg shadow-black/20"
+              className="w-full sm:w-auto bg-[#f2cb05] text-[#022873] font-display font-bold px-7 py-3.5 rounded-full hover:brightness-95 active:scale-[0.98] sm:hover:scale-[1.02] transition shadow-lg shadow-black/20"
             >
               Vote {candidato.numero}
             </button>
             <a
-              href="#historia"
-              className="text-white/90 font-semibold underline underline-offset-4 decoration-[#03a63c] hover:text-[#f2cb05] transition"
+              href="#video"
+              className="inline-flex items-center gap-1.5 text-white/90 font-semibold underline underline-offset-4 decoration-[#03a63c] hover:text-[#f2cb05] transition"
             >
-              Continue lendo
+              Veja o vídeo
+              <ChevronDown size={16} />
             </a>
           </div>
         </div>
 
         <div className="order-1 md:order-2 flex flex-col items-center">
           <div className="relative">
-            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#f2cb05] via-[#03a63c] to-[#0339a6] opacity-70 blur-md" />
+            <div className="absolute -inset-2 sm:-inset-3 rounded-[1.5rem] sm:rounded-[2rem] bg-gradient-to-br from-[#f2cb05] via-[#03a63c] to-[#0339a6] opacity-70 blur-md" />
             <img
               src={fotoPablicio}
               alt={candidato.nome}
-              className="relative w-64 sm:w-80 rounded-[1.75rem] shadow-2xl object-cover ring-1 ring-white/20"
+              className="relative w-40 sm:w-64 md:w-80 rounded-2xl sm:rounded-[1.75rem] shadow-2xl object-cover ring-1 ring-white/20"
             />
           </div>
-          <div className="mt-7 text-center">
-            <div className="font-display font-extrabold text-5xl md:text-6xl text-[#f2cb05] drop-shadow-sm">
+          <div className="mt-4 sm:mt-7 text-center">
+            <div className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-[#f2cb05] drop-shadow-sm">
               {candidato.numero}
             </div>
-            <p className="text-white/70 text-sm mt-1 tracking-wide">{candidato.bandeira}</p>
+            <p className="text-white/70 text-xs sm:text-sm mt-1 tracking-wide">
+              {candidato.bandeira}
+            </p>
           </div>
         </div>
       </div>
