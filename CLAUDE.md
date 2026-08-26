@@ -37,6 +37,11 @@ criado especificamente pra esse candidato — não é compartilhado com outros p
 - Credenciais em `.env` (não commitado — está no `.gitignore`): `VITE_SUPABASE_URL` e
   `VITE_SUPABASE_ANON_KEY`
 - Client em `src/lib/supabase.ts`
+- Função `public.get_leads_count()` (SQL, `security definer`) — retorna só a **contagem** de
+  leads, sem expor nome/whatsapp/cidade de ninguém. É nela que o contador social
+  (`SupportersCounter.tsx`) se baseia. Liberada via `grant execute` pro role `anon` — de
+  propósito não dei `select` público na tabela `leads` inteira, pra não vazar dados pessoais
+  pela API REST do Supabase.
 
 Pra ver os leads: painel do Supabase → projeto `pablicio-medeiros-leads` → Table Editor →
 `leads`.
@@ -60,10 +65,15 @@ recrie apontando pra outro projeto Supabase).
   leads. Qualquer botão pode abrir com `const { openModal } = useLeadModal()`.
 - `src/lib/video.ts` — detecta se o link colado em `content.ts > videoUrl` é YouTube, Vimeo
   ou um arquivo de vídeo direto (.mp4/.webm) e monta o embed certo.
+- `src/hooks/useLeadsCount.ts` + `src/components/SupportersCounter.tsx` — contador social real
+  ("X pessoas já confirmaram presença"), busca a contagem no Supabase. Usado no `ParticiparCta`
+  (fundo escuro, `variant="dark"`) e dentro do modal (`LeadForm`, fundo claro,
+  `variant="light"`). Com 0 cadastros mostra "Seja um dos primeiros" em vez de "0 pessoas" —
+  de propósito, pra não expor um número que passe impressão ruim.
 - `src/assets/pablicio-foto.jpg` — foto original do candidato (fundo branco de estúdio)
-- `src/assets/pablicio-cutout.png` — a mesma foto **sem fundo** (recortada com IA, rembg
-  modelo `u2net_human_seg`), usada no Hero. Se precisar recortar outra foto, veja o processo
-  abaixo.
+- `src/assets/pablicio-cutout.webp` — a mesma foto **sem fundo** (recortada com IA, rembg
+  modelo `u2net_human_seg`, depois convertida de PNG pra WebP: 612KB → 60KB), usada no Hero.
+  Se precisar recortar outra foto, veja o processo abaixo.
 - `src/assets/ideias-centrais.png` — infográfico de referência (não usado diretamente na
   página, os textos foram extraídos para `content.ts`)
 
@@ -78,7 +88,9 @@ session = new_session('u2net_human_seg')  # modelo leve, ~176MB, roda bem em CPU
 img = remove(Image.open('foto-original.jpg'), session=session, alpha_matting=True,
              alpha_matting_foreground_threshold=240, alpha_matting_background_threshold=10,
              alpha_matting_erode_size=5)
-img.crop(img.getbbox()).save('foto-cutout.png')
+cutout = img.crop(img.getbbox())
+cutout.save('foto-cutout.png')
+cutout.save('foto-cutout.webp', 'WEBP', quality=90, method=6)  # bem mais leve, use este no código
 "
 ```
 

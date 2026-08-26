@@ -1,4 +1,5 @@
 import { useLeadModal } from "../context/LeadModalContext";
+import SupportersCounter from "./SupportersCounter";
 
 export default function ParticiparCta() {
   const { openModal } = useLeadModal();
@@ -28,6 +29,10 @@ export default function ParticiparCta() {
         >
           Quero fazer parte
         </button>
+
+        <div className="mt-5">
+          <SupportersCounter />
+        </div>
       </div>
     </section>
   );

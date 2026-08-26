@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { cidadesRegiao, contato } from "../data/content";
 import { supabase } from "../lib/supabase";
+import SupportersCounter from "./SupportersCounter";
 
 const PARTICIPACAO = [
   "Só quero acompanhar",
@@ -109,10 +110,14 @@ export default function LeadForm({ onDone }: { onDone?: () => void }) {
       <h2 className="font-display font-extrabold text-xl sm:text-2xl md:text-3xl text-center mb-2.5 sm:mb-3 leading-tight">
         Some com a gente.
       </h2>
-      <p className="text-center text-[#0e1b2a]/70 mb-6 sm:mb-8 text-sm md:text-base">
+      <p className="text-center text-[#0e1b2a]/70 mb-4 text-sm md:text-base">
         Você vai saber o que está acontecendo na sua cidade, em primeira mão. E sai da lista
         quando quiser. Leva menos de um minuto.
       </p>
+
+      <div className="flex justify-center mb-6 sm:mb-8">
+        <SupportersCounter variant="light" />
+      </div>
 
       <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
         <div>

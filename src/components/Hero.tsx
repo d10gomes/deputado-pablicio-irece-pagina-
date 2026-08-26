@@ -1,7 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { candidato, bio } from "../data/content";
 import { useLeadModal } from "../context/LeadModalContext";
-import fotoPablicio from "../assets/pablicio-cutout.png";
+import fotoPablicio from "../assets/pablicio-cutout.webp";
 
 export default function Hero() {
   const { openModal } = useLeadModal();
@@ -54,7 +54,10 @@ export default function Hero() {
             <img
               src={fotoPablicio}
               alt={candidato.nome}
-              className="relative w-48 sm:w-72 md:w-[22rem] object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.45)]"
+              width={579}
+              height={1157}
+              fetchPriority="high"
+              className="relative w-48 sm:w-72 md:w-[22rem] h-auto object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.45)]"
             />
           </div>
           <div className="mt-1 sm:mt-2 text-center">
