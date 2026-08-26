@@ -21,7 +21,14 @@ function FacebookIcon() {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0e1b2a] text-white/70 py-10 text-sm">
+    <footer className="bg-[#0e1b2a] text-white/70 pb-10 text-sm">
+      <div className="h-1 flex mb-10">
+        <span className="flex-1 bg-[#f2cb05]" />
+        <span className="flex-1 bg-[#03a63c]" />
+        <span className="flex-1 bg-[#02732a]" />
+        <span className="flex-1 bg-[#0339a6]" />
+        <span className="flex-1 bg-[#022873]" />
+      </div>
       <div className="max-w-4xl mx-auto px-5 text-center space-y-3">
         <p className="font-display font-bold text-white text-base">
           {candidato.nome.toUpperCase()}
@@ -29,16 +36,24 @@ export default function Footer() {
         <p>{rodapeLegal.nomeCivil}</p>
 
         <div className="flex justify-center gap-4 py-2">
-          <a href={contato.instagram} aria-label="Instagram" className="hover:text-white">
+          <a
+            href={contato.instagram}
+            aria-label="Instagram"
+            className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0339a6] hover:text-white transition"
+          >
             <InstagramIcon />
           </a>
-          <a href={contato.facebook} aria-label="Facebook" className="hover:text-white">
+          <a
+            href={contato.facebook}
+            aria-label="Facebook"
+            className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0339a6] hover:text-white transition"
+          >
             <FacebookIcon />
           </a>
           <a
             href={`https://wa.me/${contato.whatsapp}`}
             aria-label="WhatsApp"
-            className="hover:text-white"
+            className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#02732a] hover:text-white transition"
           >
             <MessageCircle size={18} />
           </a>

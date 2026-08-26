@@ -6,7 +6,7 @@ export default function CookieBanner() {
   if (!visivel) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0e1b2a] text-white text-sm px-5 py-4 flex flex-wrap items-center justify-center gap-4">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0e1b2a] text-white text-sm px-5 py-4 flex flex-wrap items-center justify-center gap-4 border-t border-white/10 shadow-[0_-8px_24px_rgba(0,0,0,0.25)]">
       <p className="max-w-xl text-white/85">
         Usamos cookies para entender como as pessoas chegam até aqui e melhorar nossa
         comunicação. Seus dados nunca são vendidos. Você pode recusar e continuar navegando

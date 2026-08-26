@@ -13,6 +13,10 @@ export const candidato = {
   cidadeBase: "Irecê",
 };
 
+// Cole aqui o link do vídeo (YouTube, Vimeo ou um .mp4 direto). Deixe vazio para
+// mostrar o placeholder "vídeo em breve".
+export const videoUrl = "";
+
 export const contato = {
   whatsapp: "5574987822591",
   whatsappExibicao: "(74) 98782-2591",
