@@ -107,6 +107,20 @@ recrie apontando pra outro projeto Supabase).
     sistema) e cai pra um link `wa.me` no desktop. A URL compartilhada usa
     `window.location.origin`, então já sai correta assim que o site for publicado num
     domínio de verdade (não precisa hardcodar).
+- `src/components/RetentionPopupTrigger.tsx` — abre o mesmo popup de leads automaticamente
+  quando o visitante dá sinal de que vai sair sem converter: 40s na página, OU rolou 70% dela,
+  OU (bônus desktop) tirou o mouse pelo topo da janela — o que vier primeiro. **Não é
+  "exit intent" clássico** (técnica de mouse, quase inútil no celular, que é a maioria do
+  tráfego aqui) — por isso o gatilho principal é tempo/scroll, que funciona igual em qualquer
+  aparelho. Regras de bom comportamento, todas via `sessionStorage`:
+  - Nunca antes de 8s na página (não interrompe quem acabou de chegar);
+  - No máximo uma vez por sessão (`popupRetencaoMostrado`);
+  - Nunca se a pessoa já abriu o formulário manualmente por qualquer botão nesse meio tempo
+    (o próprio `open` do `LeadModalContext` já marca a flag);
+  - Nunca se ela já enviou os dados com sucesso (`leadEnviado`, setado em
+    `LeadForm.tsx > handleSubmit`).
+  - Sem duplicar lógica de formulário: só decide *quando* chamar `openModal()` do contexto
+    existente, reaproveitando o mesmo popup/formulário de sempre.
 - `src/lib/video.ts` — detecta se o link colado em `content.ts > videoUrl` é YouTube, Vimeo
   ou um arquivo de vídeo direto (.mp4/.webm) e monta o embed certo.
 - `src/data/galeria.ts` + `src/components/Articulacao.tsx` — seção "Diálogo e Articulação"

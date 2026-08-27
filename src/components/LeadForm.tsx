@@ -96,6 +96,7 @@ export default function LeadForm({ onDone }: { onDone?: () => void }) {
       linhas.join("\n"),
     )}`;
     window.open(url, "_blank", "noopener,noreferrer");
+    sessionStorage.setItem("leadEnviado", "1");
     setEnviado(true);
   }
 

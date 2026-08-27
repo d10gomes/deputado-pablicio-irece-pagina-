@@ -16,6 +16,7 @@ import StickyMobileCta from "./components/StickyMobileCta";
 import Modal from "./components/Modal";
 import LeadForm from "./components/LeadForm";
 import Reveal from "./components/Reveal";
+import RetentionPopupTrigger from "./components/RetentionPopupTrigger";
 import { LeadModalProvider, useLeadModal } from "./context/LeadModalContext";
 
 function LeadModal() {
@@ -71,6 +72,7 @@ function App() {
         <CookieBanner />
         <StickyMobileCta />
         <LeadModal />
+        <RetentionPopupTrigger />
       </div>
     </LeadModalProvider>
   );
