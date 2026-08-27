@@ -7,9 +7,9 @@ export default function Hero() {
   const { openModal } = useLeadModal();
 
   return (
-    <section className="relative bg-gradient-to-br from-[#022873] via-[#022873] to-[#0339a6] text-white pt-20 sm:pt-28 md:pt-32 pb-10 sm:pb-16 md:pb-20 overflow-hidden">
-      <div className="pointer-events-none absolute -top-24 -right-16 w-64 h-64 sm:w-96 sm:h-96 rounded-full bg-[#03a63c]/25 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 -left-16 w-56 h-56 sm:w-80 sm:h-80 rounded-full bg-[#f2cb05]/15 blur-3xl" />
+    <section className="relative bg-gradient-to-br from-[#02732a] via-[#025c22] to-[#022873] text-white pt-20 sm:pt-28 md:pt-32 pb-10 sm:pb-16 md:pb-20 overflow-hidden">
+      <div className="pointer-events-none absolute -top-24 -right-16 w-64 h-64 sm:w-96 sm:h-96 rounded-full bg-[#0339a6]/30 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 -left-16 w-56 h-56 sm:w-80 sm:h-80 rounded-full bg-[#f2cb05]/20 blur-3xl" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.06)_1px,transparent_0)] [background-size:28px_28px]" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-5 grid md:grid-cols-[1.1fr_0.9fr] gap-6 sm:gap-10 md:gap-12 items-center">
@@ -54,8 +54,8 @@ export default function Hero() {
             <img
               src={fotoPablicio}
               alt={candidato.nome}
-              width={579}
-              height={1157}
+              width={577}
+              height={786}
               fetchPriority="high"
               className="relative w-48 sm:w-72 md:w-[22rem] h-auto object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.45)]"
             />
