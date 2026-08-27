@@ -1,4 +1,5 @@
 import foto1 from "../assets/dialogo-articulacao-1.webp";
+import foto2 from "../assets/dialogo-articulacao-2.webp";
 
 export type FotoGaleria = {
   src: string;
@@ -11,5 +12,9 @@ export const galeria: FotoGaleria[] = [
     src: foto1,
     legenda:
       "João Roma (candidato a Senador), Dr. Pablício Medeiros, ACM Neto (candidato a Governador) e Bruno Reis (prefeito de Salvador)",
+  },
+  {
+    src: foto2,
+    legenda: "ACM Neto (candidato a Governador) e Dr. Pablício Medeiros",
   },
 ];
