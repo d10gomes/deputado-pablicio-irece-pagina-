@@ -78,16 +78,15 @@ recrie apontando pra outro projeto Supabase).
   cargo/candidatura), nunca "apoio de fulano" — ver nota de TSE abaixo. Fotos usadas aqui
   **não** levam `loading="lazy"` de propósito (não carregavam nesse ambiente de dev com scroll
   programático; carregamento direto é mais robusto pra uma galeria pequena).
-- **Carrossel rotativo (marquee):** a galeria roda em 2 fileiras horizontais em movimento
-  contínuo e automático (uma pra cada lado), pensado pro tráfego majoritariamente mobile —
-  mais dinâmico e ocupa menos altura de tela que um grid estático. Implementado com
-  `@keyframes marqueeLeft/marqueeRight` em `index.css` + classe `.marquee-track`; cada
-  fileira duplica sua lista de fotos (`[...items, ...items]`) para o loop ficar perfeito
-  (`translateX(-50%)` desloca exatamente um conjunto completo). Pausa no hover
-  (`hover:[animation-play-state:paused]`) e respeita `prefers-reduced-motion` (pausa em vez de
-  usar a regra global de "duration 0.01ms", que deixaria o loop trepidando). Pra adicionar mais
-  fotos, é só editar `galeria.ts` — a divisão em duas fileiras (`Math.ceil(length/2)`) e a
-  duplicação são automáticas.
+- **Carrossel rotativo em anel:** a galeria fica numa fileira só, girando sozinha e sem
+  parar — pensado pro tráfego majoritariamente mobile (mais dinâmico, ocupa pouca altura de
+  tela). **Nenhuma foto é duplicada no DOM**: a cada frame (`requestAnimationFrame`) o track
+  desliza pra esquerda; quando o primeiro card sai totalmente de vista, o próprio nó é movido
+  pro final com `track.appendChild(first)` (manipulação direta do DOM, sem passar pelo
+  `setState`/render do React, pra não ter nenhum salto de sincronização) e o offset acumulado
+  é compensado no mesmo instante. Pausa ao passar o mouse (`onMouseEnter/Leave`) e não gira se
+  o visitante tiver "reduzir movimento" ativado no sistema. Pra adicionar mais fotos, só editar
+  `galeria.ts` — a fileira e a rotação são automáticas pra qualquer quantidade.
 - `src/hooks/useLeadsCount.ts` + `src/components/SupportersCounter.tsx` — contador social real
   ("X pessoas já confirmaram presença"), busca a contagem no Supabase. Usado no `ParticiparCta`
   (fundo escuro, `variant="dark"`) e dentro do modal (`LeadForm`, fundo claro,
