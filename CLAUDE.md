@@ -20,7 +20,32 @@ atuação, sem pedir voto/número) até o registro ser protocolado.
 quem está na foto e o cargo/candidatura de cada um, sem afirmar "apoio de fulano" — isso evitaria
 a necessidade de autorização formal dessas pessoas, já que não é uma alegação de endosso
 político, só uma identificação factual de um encontro. Ideal manter esse padrão em fotos
-futuras dessa seção.
+futuras dessa seção. Confirmado com a campanha (27/08/2026): todas as fotos foram tiradas em
+encontros e eventos do próprio partido — não em prédio público —, então o risco do Art. 73
+(uso de bem público para fins eleitorais) não se aplica aqui. Autorização individual de cada
+pessoa retratada pra aparecer no material da campanha ainda é um ponto em aberto — aguardando
+confirmação da campanha antes de divulgar essas fotos em peça paga.
+
+**Revisão geral de conformidade (27/08/2026):** a pedido do responsável pela campanha, foram
+feitos 3 ajustes preventivos de LGPD/TSE:
+1. Removidas as opções "Igreja e fé" e "Liberdade religiosa" do campo "O que mais te toca" do
+   formulário (`LeadForm.tsx`) — convicção religiosa é dado pessoal **sensível** pela LGPD
+   (Art. 5º, II), e coletar isso sem uma base legal/aviso específico é um risco desnecessário.
+   As posições do candidato sobre liberdade religiosa continuam normalmente no plano de
+   governo (`content.ts > eixos`) — o que foi removido foi só a pergunta feita ao visitante.
+2. Criada a Política de Privacidade (`public/privacidade.html`), linkada no rodapé e dentro do
+   formulário. Cobre: dados coletados, finalidade, base legal (consentimento), onde ficam
+   guardados, prazo de retenção, direitos do titular e como exercê-los. Nota honesta sobre
+   cookies: hoje o site não tem nenhum rastreamento real instalado, então a política registra
+   isso em vez de fingir uma política de cookies que não existe ainda.
+3. Adicionada citação de fonte ("Fonte: Codevasf") embaixo dos números de impacto regional em
+   `Stats.tsx` — os números (hectares do Mirorós/Baixio de Irecê, R$ 1,3 bi) vêm de projeções
+   da Codevasf mencionadas no material original do candidato; citar a fonte reduz o risco de
+   alegação de "informação inverídica" por terceiros.
+
+**Deixado pra depois, por decisão do responsável pela campanha:** trocar o domínio placeholder
+no Open Graph, e revisar o banner/política de cookies (só vira necessário de verdade se
+instalarem alguma ferramenta de analytics ou pixel de anúncio pago).
 
 ## Stack
 
@@ -169,6 +194,11 @@ Sem link, mostra um placeholder "Vídeo em breve".
   (placeholder). Trocar pelos links reais.
 - **Time/apoiadores**: seção não incluída por falta de dados (nomes/fotos de lideranças
   apoiadoras). Adicionar se o candidato quiser.
+- **Domínio no Open Graph**: ainda com o placeholder `SEU-DOMINIO-AQUI` — deixado pra depois
+  por decisão do responsável pela campanha, trocar quando o domínio final for definido.
+- **Autorização das pessoas na galeria "Diálogo e Articulação"**: confirmar que cada pessoa
+  fotografada está de acordo em aparecer no material de campanha (mais importante se algum
+  dia essas fotos forem usadas em peça paga/impulsionada).
 
 ## Dados legais (rodapé)
 

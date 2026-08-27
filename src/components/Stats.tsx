@@ -37,6 +37,10 @@ export default function Stats() {
           melhor, vender melhor e agregar valor aqui — porque produção gera trabalho, trabalho
           gera renda, e renda gera desenvolvimento.
         </p>
+        <p className="text-center text-[11px] sm:text-xs text-white/50 mt-4">
+          Fonte: Codevasf — projeções dos projetos públicos de irrigação Mirorós e Baixio de
+          Irecê.
+        </p>
       </div>
     </section>
   );

@@ -12,12 +12,10 @@ const PARTICIPACAO = [
 ];
 
 const TEMAS = [
-  "Igreja e fé",
   "Educação e professores",
   "Agricultura familiar e água",
   "Indústria e emprego",
   "Liberdade econômica",
-  "Liberdade religiosa",
 ];
 
 export default function LeadForm({ onDone }: { onDone?: () => void }) {
@@ -233,7 +231,16 @@ export default function LeadForm({ onDone }: { onDone?: () => void }) {
 
         <p className="text-xs text-[#0e1b2a]/50">
           Seus dados são usados só para falar com você e nunca são vendidos ou repassados.
-          Para sair da lista, responda SAIR em qualquer mensagem.
+          Para sair da lista, responda SAIR em qualquer mensagem. Veja nossa{" "}
+          <a
+            href="/privacidade.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-[#0339a6]"
+          >
+            Política de Privacidade
+          </a>
+          .
         </p>
 
         {erro && <p className="text-sm text-red-600">{erro}</p>}

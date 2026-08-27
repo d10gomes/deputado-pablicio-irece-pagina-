@@ -63,6 +63,11 @@ export default function Footer() {
           Contato para dúvidas e exclusão de dados: {contato.whatsappExibicao} ·{" "}
           {contato.email}
         </p>
+        <p>
+          <a href="/privacidade.html" className="underline hover:text-white">
+            Política de Privacidade
+          </a>
+        </p>
 
         <p className="text-xs text-white/50 max-w-2xl mx-auto pt-4 border-t border-white/10">
           {rodapeLegal.disclaimer}
