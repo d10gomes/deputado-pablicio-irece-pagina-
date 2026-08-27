@@ -203,7 +203,7 @@ Sem link, mostra um placeholder "Vídeo em breve".
 ## Dados legais (rodapé)
 
 - CNPJ do responsável pela contratação: 68.237.185/0001-96
-- Contato: (74) 98782-2591 · pablicioae@hotmail.com
+- Contato: (71) 98782-2591 · pablicioae@hotmail.com
 
 ## Próximos passos sugeridos
 

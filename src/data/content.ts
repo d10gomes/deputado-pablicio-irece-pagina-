@@ -18,8 +18,8 @@ export const candidato = {
 export const videoUrl = "";
 
 export const contato = {
-  whatsapp: "5574987822591",
-  whatsappExibicao: "(74) 98782-2591",
+  whatsapp: "5571987822591",
+  whatsappExibicao: "(71) 98782-2591",
   email: "pablicioae@hotmail.com",
   cnpjResponsavel: "68.237.185/0001-96",
   instagram: "#",
