@@ -16,6 +16,12 @@ situação mudar (ex: reaproveitar esse template pra outro candidato ainda em pr
 trocar "Vote 2201" e pedidos diretos de voto por linguagem de pré-campanha (só biografia e
 atuação, sem pedir voto/número) até o registro ser protocolado.
 
+**Fotos com outras lideranças (seção "Diálogo e Articulação"):** legendas identificam apenas
+quem está na foto e o cargo/candidatura de cada um, sem afirmar "apoio de fulano" — isso evitaria
+a necessidade de autorização formal dessas pessoas, já que não é uma alegação de endosso
+político, só uma identificação factual de um encontro. Ideal manter esse padrão em fotos
+futuras dessa seção.
+
 ## Stack
 
 - React + TypeScript + Vite
@@ -65,6 +71,13 @@ recrie apontando pra outro projeto Supabase).
   leads. Qualquer botão pode abrir com `const { openModal } = useLeadModal()`.
 - `src/lib/video.ts` — detecta se o link colado em `content.ts > videoUrl` é YouTube, Vimeo
   ou um arquivo de vídeo direto (.mp4/.webm) e monta o embed certo.
+- `src/data/galeria.ts` + `src/components/Articulacao.tsx` — seção "Diálogo e Articulação"
+  (fotos com outras lideranças políticas). Pra adicionar uma foto nova: importe o arquivo em
+  `galeria.ts` e adicione `{ src, legenda }` no array — o card aparece sozinho. Legenda é só
+  identificação factual (nomes + cargo/candidatura), nunca "apoio de fulano" — ver nota de TSE
+  abaixo. Fotos usadas aqui **não** levam `loading="lazy"` de propósito (não carregavam nesse
+  ambiente de dev com scroll programático; carregamento direto é mais robusto pra uma galeria
+  pequena).
 - `src/hooks/useLeadsCount.ts` + `src/components/SupportersCounter.tsx` — contador social real
   ("X pessoas já confirmaram presença"), busca a contagem no Supabase. Usado no `ParticiparCta`
   (fundo escuro, `variant="dark"`) e dentro do modal (`LeadForm`, fundo claro,

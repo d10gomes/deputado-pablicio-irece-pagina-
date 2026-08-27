@@ -7,6 +7,7 @@ import Stats from "./components/Stats";
 import Values from "./components/Values";
 import Plan from "./components/Plan";
 import Authenticity from "./components/Authenticity";
+import Articulacao from "./components/Articulacao";
 import FinalCta from "./components/FinalCta";
 import ParticiparCta from "./components/ParticiparCta";
 import Footer from "./components/Footer";
@@ -55,6 +56,9 @@ function App() {
         </Reveal>
         <Reveal>
           <Authenticity />
+        </Reveal>
+        <Reveal>
+          <Articulacao />
         </Reveal>
         <Reveal>
           <FinalCta />
