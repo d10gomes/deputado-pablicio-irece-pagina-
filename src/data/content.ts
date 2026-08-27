@@ -23,7 +23,7 @@ export const contato = {
   email: "pablicioae@hotmail.com",
   cnpjResponsavel: "68.237.185/0001-96",
   instagram: "#",
-  facebook: "#",
+  facebook: "https://www.facebook.com/pablicio.medeiros",
 };
 
 export const cores = {

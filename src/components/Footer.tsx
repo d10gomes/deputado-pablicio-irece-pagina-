@@ -38,6 +38,8 @@ export default function Footer() {
         <div className="flex justify-center gap-4 py-2">
           <a
             href={contato.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Instagram"
             className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0339a6] hover:text-white transition"
           >
@@ -45,6 +47,8 @@ export default function Footer() {
           </a>
           <a
             href={contato.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Facebook"
             className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0339a6] hover:text-white transition"
           >
@@ -52,6 +56,8 @@ export default function Footer() {
           </a>
           <a
             href={`https://wa.me/${contato.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="WhatsApp"
             className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#02732a] hover:text-white transition"
           >
