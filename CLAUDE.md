@@ -73,11 +73,21 @@ recrie apontando pra outro projeto Supabase).
   ou um arquivo de vídeo direto (.mp4/.webm) e monta o embed certo.
 - `src/data/galeria.ts` + `src/components/Articulacao.tsx` — seção "Diálogo e Articulação"
   (fotos com outras lideranças políticas). Pra adicionar uma foto nova: importe o arquivo em
-  `galeria.ts` e adicione `{ src, legenda }` no array — o card aparece sozinho. Legenda é só
-  identificação factual (nomes + cargo/candidatura), nunca "apoio de fulano" — ver nota de TSE
-  abaixo. Fotos usadas aqui **não** levam `loading="lazy"` de propósito (não carregavam nesse
-  ambiente de dev com scroll programático; carregamento direto é mais robusto pra uma galeria
-  pequena).
+  `galeria.ts` e adicione `{ src, legenda }` no array — o card aparece sozinho, distribuído
+  automaticamente numa das duas fileiras. Legenda é só identificação factual (nomes +
+  cargo/candidatura), nunca "apoio de fulano" — ver nota de TSE abaixo. Fotos usadas aqui
+  **não** levam `loading="lazy"` de propósito (não carregavam nesse ambiente de dev com scroll
+  programático; carregamento direto é mais robusto pra uma galeria pequena).
+- **Carrossel rotativo (marquee):** a galeria roda em 2 fileiras horizontais em movimento
+  contínuo e automático (uma pra cada lado), pensado pro tráfego majoritariamente mobile —
+  mais dinâmico e ocupa menos altura de tela que um grid estático. Implementado com
+  `@keyframes marqueeLeft/marqueeRight` em `index.css` + classe `.marquee-track`; cada
+  fileira duplica sua lista de fotos (`[...items, ...items]`) para o loop ficar perfeito
+  (`translateX(-50%)` desloca exatamente um conjunto completo). Pausa no hover
+  (`hover:[animation-play-state:paused]`) e respeita `prefers-reduced-motion` (pausa em vez de
+  usar a regra global de "duration 0.01ms", que deixaria o loop trepidando). Pra adicionar mais
+  fotos, é só editar `galeria.ts` — a divisão em duas fileiras (`Math.ceil(length/2)`) e a
+  duplicação são automáticas.
 - `src/hooks/useLeadsCount.ts` + `src/components/SupportersCounter.tsx` — contador social real
   ("X pessoas já confirmaram presença"), busca a contagem no Supabase. Usado no `ParticiparCta`
   (fundo escuro, `variant="dark"`) e dentro do modal (`LeadForm`, fundo claro,
