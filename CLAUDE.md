@@ -94,6 +94,19 @@ recrie apontando pra outro projeto Supabase).
 - `src/components/` — uma seção da página por arquivo (Hero, Bio, Stats, Plan, VideoVsl...)
 - `src/components/Modal.tsx` + `src/context/LeadModalContext.tsx` — o popup de captação de
   leads. Qualquer botão pode abrir com `const { openModal } = useLeadModal()`.
+- **Melhorias de conversão no popup (`LeadForm.tsx`):**
+  - Foto do candidato (avatar circular) no topo do formulário — passa confiança de que é
+    ele mesmo pedindo.
+  - Máscara automática no campo de WhatsApp (`formatarWhatsapp`) — sempre assume formato de
+    celular (DDD + 9 dígitos), que é o padrão hoje no Brasil; evita o hífen "pulando de
+    posição" enquanto a pessoa digita.
+  - Selo "Seus dados estão protegidos" com ícone, logo acima do botão de enviar — reforça
+    confiança no momento exato da decisão de enviar.
+  - Depois de enviar, convite pra compartilhar com 3 amigos (`compartilhar()` em
+    `LeadForm.tsx`) — usa a Web Share API nativa no celular (abre o menu de compartilhar do
+    sistema) e cai pra um link `wa.me` no desktop. A URL compartilhada usa
+    `window.location.origin`, então já sai correta assim que o site for publicado num
+    domínio de verdade (não precisa hardcodar).
 - `src/lib/video.ts` — detecta se o link colado em `content.ts > videoUrl` é YouTube, Vimeo
   ou um arquivo de vídeo direto (.mp4/.webm) e monta o embed certo.
 - `src/data/galeria.ts` + `src/components/Articulacao.tsx` — seção "Diálogo e Articulação"
