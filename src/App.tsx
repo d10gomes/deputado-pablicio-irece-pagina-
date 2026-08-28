@@ -8,6 +8,7 @@ import Values from "./components/Values";
 import Plan from "./components/Plan";
 import Authenticity from "./components/Authenticity";
 import Articulacao from "./components/Articulacao";
+import Chapa from "./components/Chapa";
 import FinalCta from "./components/FinalCta";
 import ParticiparCta from "./components/ParticiparCta";
 import Footer from "./components/Footer";
@@ -60,6 +61,9 @@ function App() {
         </Reveal>
         <Reveal>
           <Articulacao />
+        </Reveal>
+        <Reveal>
+          <Chapa />
         </Reveal>
         <Reveal>
           <FinalCta />
