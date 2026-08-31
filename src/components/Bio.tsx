@@ -2,7 +2,7 @@ import { bio, candidato } from "../data/content";
 
 export default function Bio() {
   return (
-    <section className="bg-[#f6f8fa] py-12 sm:py-16 md:py-24">
+    <section id="sobre" className="bg-[#f6f8fa] py-12 sm:py-16 md:py-24 scroll-mt-16">
       <div className="max-w-3xl mx-auto px-4 sm:px-5">
         <p className="uppercase tracking-widest text-[#0339a6] font-semibold text-xs sm:text-sm mb-3 sm:mb-4 text-center">
           <span className="rounded-full bg-[#0339a6]/10 px-3.5 sm:px-4 py-1.5">Quem é ele</span>

@@ -21,13 +21,12 @@ function FacebookIcon() {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0e1b2a] text-white/70 pb-8 sm:pb-10 text-sm">
+    <footer className="bg-brand-ink text-white/70 pb-8 sm:pb-10 text-sm">
       <div className="h-1 flex mb-8 sm:mb-10">
-        <span className="flex-1 bg-[#f2cb05]" />
-        <span className="flex-1 bg-[#03a63c]" />
-        <span className="flex-1 bg-[#02732a]" />
-        <span className="flex-1 bg-[#0339a6]" />
-        <span className="flex-1 bg-[#022873]" />
+        <span className="flex-[2] bg-brand-green-700" />
+        <span className="flex-[2] bg-brand-green-500" />
+        <span className="flex-1 bg-brand-blue-700" />
+        <span className="flex-1 bg-brand-yellow-500" />
       </div>
       <div className="max-w-4xl mx-auto px-4 sm:px-5 text-center space-y-3 break-words">
         <p className="font-display font-bold text-white text-base">
@@ -41,7 +40,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0339a6] hover:text-white transition"
+            className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-blue-700 hover:text-white transition"
           >
             <InstagramIcon />
           </a>
@@ -50,7 +49,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0339a6] hover:text-white transition"
+            className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-blue-700 hover:text-white transition"
           >
             <FacebookIcon />
           </a>
@@ -59,7 +58,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
-            className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#02732a] hover:text-white transition"
+            className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-green-700 hover:text-white transition"
           >
             <MessageCircle size={18} />
           </a>

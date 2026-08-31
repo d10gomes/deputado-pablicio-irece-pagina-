@@ -17,6 +17,13 @@ export const candidato = {
 // mostrar o placeholder "vídeo em breve".
 export const videoUrl = "";
 
+export const hero = {
+  headline: "A Bahia precisa de quem esteja presente.",
+  apoio: "Trabalho, diálogo e representação para a Bahia.",
+  ctaPrimario: "Conheça o projeto",
+  ctaSecundario: "Faça parte",
+};
+
 export const contato = {
   whatsapp: "5571987822591",
   whatsappExibicao: "(71) 98782-2591",

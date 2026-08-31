@@ -76,7 +76,7 @@ export default function Articulacao() {
   if (galeria.length === 0) return null;
 
   return (
-    <section className="bg-[#f6f8fa] py-12 sm:py-16 md:py-24 overflow-hidden">
+    <section id="presenca" className="bg-[#f6f8fa] py-12 sm:py-16 md:py-24 overflow-hidden scroll-mt-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-5">
         <p className="uppercase tracking-widest text-[#0339a6] font-semibold text-xs sm:text-sm mb-3 text-center">
           <span className="rounded-full bg-[#0339a6]/10 px-3.5 sm:px-4 py-1.5">
