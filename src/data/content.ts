@@ -15,7 +15,7 @@ export const candidato = {
 
 // Cole aqui o link do vídeo (YouTube, Vimeo ou um .mp4 direto). Deixe vazio para
 // mostrar o placeholder "vídeo em breve".
-export const videoUrl = "";
+export const videoUrl = "https://video-spark-vault.lovable.app/watch/e32b83d5-3d2d-4b11-9b6b-0d8860e5078a";
 
 export const hero = {
   headline: "A Bahia precisa de quem esteja presente.",
