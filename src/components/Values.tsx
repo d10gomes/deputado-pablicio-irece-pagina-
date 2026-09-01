@@ -29,17 +29,17 @@ const CORES = [
 
 export default function Values() {
   return (
-    <section className="bg-white py-12 sm:py-16 md:py-24">
+    <section className="bg-white dark:bg-brand-ink py-12 sm:py-16 md:py-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-5">
-        <p className="uppercase tracking-widest text-[#02732a] font-semibold text-xs sm:text-sm mb-3 text-center">
-          <span className="rounded-full bg-[#03a63c]/10 px-3.5 sm:px-4 py-1.5">
+        <p className="uppercase tracking-widest text-[#02732a] dark:text-brand-yellow-500 font-semibold text-xs sm:text-sm mb-3 text-center">
+          <span className="rounded-full bg-[#03a63c]/10 dark:bg-white/10 px-3.5 sm:px-4 py-1.5">
             Ideias centrais
           </span>
         </p>
-        <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-center mb-3 sm:mb-4 leading-tight text-[#022873]">
+        <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-center mb-3 sm:mb-4 leading-tight text-[#022873] dark:text-white">
           Moral, educação e desenvolvimento econômico.
         </h2>
-        <p className="text-center text-sm sm:text-base text-[#0e1b2a]/70 max-w-2xl mx-auto mb-8 sm:mb-12">
+        <p className="text-center text-sm sm:text-base text-[#0e1b2a]/70 dark:text-white/70 max-w-2xl mx-auto mb-8 sm:mb-12">
           Os valores que orientam cada proposta de{" "}
           <span className="font-semibold">Dr. Pablício Medeiros</span>.
         </p>
@@ -50,17 +50,17 @@ export default function Values() {
             return (
               <div
                 key={v.titulo}
-                className="rounded-2xl border border-[#e5e4e7] p-5 sm:p-6 hover:border-transparent hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
+                className="rounded-2xl border border-[#e5e4e7] dark:border-white/15 p-5 sm:p-6 hover:border-transparent hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
               >
                 <div
                   className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${CORES[i % CORES.length]}`}
                 >
                   <Icon size={22} strokeWidth={2.2} />
                 </div>
-                <h3 className="font-display font-bold text-lg mb-2 text-[#022873]">
+                <h3 className="font-display font-bold text-lg mb-2 text-[#022873] dark:text-white">
                   {v.titulo}
                 </h3>
-                <p className="text-[#0e1b2a]/70 text-sm leading-relaxed">{v.texto}</p>
+                <p className="text-[#0e1b2a]/70 dark:text-white/70 text-sm leading-relaxed">{v.texto}</p>
               </div>
             );
           })}

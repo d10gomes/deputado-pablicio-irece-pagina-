@@ -76,17 +76,17 @@ export default function Articulacao() {
   if (galeria.length === 0) return null;
 
   return (
-    <section id="presenca" className="bg-[#f6f8fa] py-12 sm:py-16 md:py-24 overflow-hidden scroll-mt-16">
+    <section id="presenca" className="bg-[#f6f8fa] dark:bg-brand-ink py-12 sm:py-16 md:py-24 overflow-hidden scroll-mt-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-5">
-        <p className="uppercase tracking-widest text-[#0339a6] font-semibold text-xs sm:text-sm mb-3 text-center">
-          <span className="rounded-full bg-[#0339a6]/10 px-3.5 sm:px-4 py-1.5">
+        <p className="uppercase tracking-widest text-[#0339a6] dark:text-brand-yellow-500 font-semibold text-xs sm:text-sm mb-3 text-center">
+          <span className="rounded-full bg-[#0339a6]/10 dark:bg-white/10 px-3.5 sm:px-4 py-1.5">
             Diálogo e Articulação
           </span>
         </p>
-        <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-center mb-3 sm:mb-4 leading-tight text-[#022873]">
+        <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-center mb-3 sm:mb-4 leading-tight text-[#022873] dark:text-white">
           Presença ativa na conversa política da Bahia.
         </h2>
-        <p className="text-center text-sm sm:text-base text-[#0e1b2a]/70 max-w-2xl mx-auto mb-8 sm:mb-12">
+        <p className="text-center text-sm sm:text-base text-[#0e1b2a]/70 dark:text-white/70 max-w-2xl mx-auto mb-8 sm:mb-12">
           Encontros e conversas que ajudam a construir soluções para o centro-norte do estado.
         </p>
       </div>

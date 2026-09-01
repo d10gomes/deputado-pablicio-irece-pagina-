@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { candidato } from "../data/content";
 
 const SESSION_KEY = "introExibida";
-const DURACAO_MS = 1700;
+const DURACAO_MS = 4300;
 const SAIDA_MS = 450;
 
 function deveExibir() {
@@ -43,20 +43,20 @@ export default function IntroSplash() {
       }`}
       aria-hidden="true"
     >
-      <div className="pointer-events-none absolute -top-20 -left-16 w-72 h-72 rounded-full bg-brand-blue-700/40 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -right-16 w-80 h-80 rounded-full bg-brand-green-500/20 blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 -left-20 w-80 h-80 sm:w-[26rem] sm:h-[26rem] rounded-full bg-brand-blue-700/40 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-28 -right-20 w-96 h-96 sm:w-[28rem] sm:h-[28rem] rounded-full bg-brand-green-500/20 blur-3xl" />
 
       <div
         className="relative flex flex-col items-center px-6 text-center"
-        style={{ animation: "introTexto 0.7s ease-out both" }}
+        style={{ animation: "introTexto 0.8s ease-out both" }}
       >
-        <span className="uppercase tracking-[0.3em] text-white/50 font-semibold text-[11px] sm:text-xs mb-3">
+        <span className="uppercase tracking-[0.3em] text-white/50 font-semibold text-xs sm:text-sm mb-4 sm:mb-5">
           {candidato.cargo}
         </span>
-        <h2 className="font-display font-extrabold text-2xl sm:text-4xl text-white leading-tight">
+        <h2 className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl text-white leading-[1.05]">
           {candidato.nome}
         </h2>
-        <div className="mt-3 font-display font-extrabold text-5xl sm:text-6xl text-brand-yellow-500">
+        <div className="mt-6 sm:mt-8 font-display font-extrabold text-7xl sm:text-8xl md:text-9xl leading-none text-brand-yellow-500">
           {candidato.numero}
         </div>
       </div>

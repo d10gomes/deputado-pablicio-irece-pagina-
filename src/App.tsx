@@ -19,6 +19,8 @@ import LeadForm from "./components/LeadForm";
 import Reveal from "./components/Reveal";
 import RetentionPopupTrigger from "./components/RetentionPopupTrigger";
 import IntroSplash from "./components/IntroSplash";
+import AccessibilityBar from "./components/AccessibilityBar";
+import WhatsAppFloating from "./components/WhatsAppFloating";
 import { LeadModalProvider, useLeadModal } from "./context/LeadModalContext";
 
 function LeadModal() {
@@ -35,7 +37,10 @@ function App() {
     <LeadModalProvider>
       <div className="min-h-screen pb-[72px] md:pb-0">
         <IntroSplash />
-        <Header />
+        <div className="fixed top-0 inset-x-0 z-50">
+          <AccessibilityBar />
+          <Header />
+        </div>
         <Hero />
 
         {/* Vídeo logo após o Hero: primeira coisa relevante que quem chega vê */}
@@ -77,6 +82,7 @@ function App() {
         <Footer />
         <CookieBanner />
         <StickyMobileCta />
+        <WhatsAppFloating />
         <LeadModal />
         <RetentionPopupTrigger />
       </div>

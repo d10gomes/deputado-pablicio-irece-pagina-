@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
+/* Ativa o utilitário dark: do Tailwind quando a página está em .modo-escuro,
+   controlado pela barra de acessibilidade (não segue o tema do sistema). */
+@custom-variant dark (&:where(.modo-escuro, .modo-escuro *));
+
 @theme {
   --color-brand-blue-900: #022873;
   --color-brand-blue-700: #0339a6;
@@ -28,6 +32,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  font-size: calc(16px * var(--escala-fonte, 1));
 }
 
 body {
@@ -37,6 +42,27 @@ body {
   font-family: "Inter", system-ui, sans-serif;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Alto contraste: reforça a diferença entre cores em toda a página — pedido de
+   acessibilidade, não é um tema visual, então usa filtro em vez de recolorir
+   cada componente manualmente. */
+html.alto-contraste {
+  filter: contrast(1.55) saturate(1.35);
+}
+html.alto-contraste img {
+  filter: contrast(0.85);
+}
+
+/* Modo escuro: troca o fundo/texto padrão do body; as seções que já têm cor
+   própria (Hero, Header, faixas azuis/verdes) não precisam de ajuste, só as
+   seções de fundo claro usam dark: para virar escuras (ver cada componente). */
+.modo-escuro {
+  color-scheme: dark;
+}
+.modo-escuro body {
+  background: var(--ink);
+  color: #f2f5fa;
 }
 
 h1, h2, h3, h4, .font-display {

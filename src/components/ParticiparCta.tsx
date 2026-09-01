@@ -7,7 +7,7 @@ export default function ParticiparCta() {
   return (
     <section
       id="participar"
-      className="relative overflow-hidden bg-gradient-to-br from-[#022873] via-[#0339a6] to-[#02732a] py-14 sm:py-16 md:py-20 scroll-mt-16"
+      className="relative overflow-hidden bg-gradient-to-br from-[#022873] via-[#0339a6] to-[#02732a] py-14 sm:py-16 md:py-20 scroll-mt-24"
     >
       <div className="absolute -top-24 -right-24 w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-[#f2cb05]/20 blur-3xl" />
       <div className="absolute -bottom-24 -left-24 w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-[#03a63c]/20 blur-3xl" />

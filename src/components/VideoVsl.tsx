@@ -9,7 +9,7 @@ export default function VideoVsl() {
   return (
     <section
       id="video"
-      className="relative bg-gradient-to-b from-[#022873] to-[#011c56] pt-8 sm:pt-10 pb-14 sm:pb-20 md:pb-24 scroll-mt-16"
+      className="relative bg-gradient-to-b from-[#022873] to-[#011c56] pt-8 sm:pt-10 pb-14 sm:pb-20 md:pb-24 scroll-mt-24"
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-5 text-center">
         <p className="uppercase tracking-widest text-[#f2cb05] font-semibold text-xs sm:text-sm mb-3">

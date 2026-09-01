@@ -24,7 +24,7 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-blue-900/90 backdrop-blur-md border-b border-white/10">
+    <header className="bg-brand-blue-900/90 backdrop-blur-md border-b border-white/10">
       <div className="h-[3px] flex">
         <span className="flex-[2] bg-brand-green-700" />
         <span className="flex-[2] bg-brand-green-500" />
@@ -85,10 +85,10 @@ export default function Header() {
       {menuAberto && (
         <>
           <div
-            className="md:hidden fixed inset-0 top-[52px] bg-black/40"
+            className="md:hidden fixed inset-0 bg-black/40"
             onClick={() => setMenuAberto(false)}
           />
-          <nav className="md:hidden relative bg-brand-blue-900 border-t border-white/10 px-4 sm:px-5 py-4 flex flex-col gap-1">
+          <nav className="md:hidden relative z-10 bg-brand-blue-900 border-t border-white/10 px-4 sm:px-5 py-4 flex flex-col gap-1">
             {LINKS.map((link) => (
               <a
                 key={link.label}

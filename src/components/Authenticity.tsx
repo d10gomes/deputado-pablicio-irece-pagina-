@@ -1,3 +1,4 @@
+import { FileDown } from "lucide-react";
 import { bio } from "../data/content";
 
 export default function Authenticity() {
@@ -19,7 +20,17 @@ export default function Authenticity() {
         <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl mb-4 sm:mb-6 leading-tight">
           {bio.autenticidadeTitulo}
         </h2>
-        <p className="text-white/85 text-sm sm:text-lg">{bio.autenticidadeTexto}</p>
+        <p className="text-white/85 text-sm sm:text-lg mb-6 sm:mb-8">{bio.autenticidadeTexto}</p>
+
+        <a
+          href="/plano-de-governo.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 border-2 border-white/30 text-white font-display font-bold text-sm sm:text-base px-6 py-3 rounded-full hover:bg-white/10 active:scale-[0.98] transition"
+        >
+          <FileDown size={18} />
+          Baixar Plano de Governo (PDF)
+        </a>
       </div>
     </section>
   );

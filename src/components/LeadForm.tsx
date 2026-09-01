@@ -280,12 +280,14 @@ export default function LeadForm({ onDone }: { onDone?: () => void }) {
             onChange={(e) => setAutoriza(e.target.checked)}
             className="mt-1 accent-[#0339a6]"
           />
-          Autorizo receber mensagens no meu WhatsApp *
+          Autorizo o tratamento do meu nome e WhatsApp, conforme a LGPD (Lei nº
+          13.709/2018), para receber mensagens da campanha *
         </label>
 
         <p className="text-xs text-[#0e1b2a]/50">
           Seus dados são usados só para falar com você e nunca são vendidos ou repassados.
-          Para sair da lista, responda SAIR em qualquer mensagem. Veja nossa{" "}
+          Você pode cancelar e sair da lista a qualquer momento, respondendo SAIR em qualquer
+          mensagem. Li a{" "}
           <a
             href="/privacidade.html"
             target="_blank"

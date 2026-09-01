@@ -18,7 +18,7 @@ export default function Hero() {
   const palavrasBandeira = candidato.bandeira.replace(" e ", ", ").split(", ");
 
   return (
-    <section className="relative text-white pt-16 sm:pt-28 md:pt-32 pb-10 sm:pb-16 md:pb-20 overflow-hidden bg-[linear-gradient(135deg,var(--color-brand-green-700)_0%,var(--color-brand-green-500)_45%,var(--color-brand-green-700)_100%)]">
+    <section className="relative text-white pt-24 sm:pt-36 md:pt-40 pb-10 sm:pb-16 md:pb-20 overflow-hidden bg-[linear-gradient(135deg,var(--color-brand-green-700)_0%,var(--color-brand-green-500)_45%,var(--color-brand-green-700)_100%)]">
       {/* luz radial discreta, só para dar profundidade — não é outra cor, é o mesmo
           verde ganhando uma variação sutil de luminosidade */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_58%_38%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.04)_35%,transparent_65%)]" />
