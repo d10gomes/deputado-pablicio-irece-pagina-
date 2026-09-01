@@ -1,6 +1,6 @@
 import { candidato, hero } from "../data/content";
 import { useLeadModal } from "../context/LeadModalContext";
-import fotoPablicio from "../assets/pablicio-cutout.webp";
+import fotoPablicio from "../assets/pablicio-cutout-close.webp";
 
 // Fade suave só nos ~10% finais da foto (mãos/cinto), onde o recorte termina em corte
 // reto — sem isso a transparência real do PNG/WebP ainda passa de "pessoa 100% opaca"
@@ -56,7 +56,7 @@ export default function Hero() {
               src={fotoPablicio}
               alt={candidato.nome}
               width={577}
-              height={786}
+              height={471}
               fetchPriority="high"
               style={FADE_INFERIOR}
               className="relative block w-[84vw] max-w-[380px] sm:w-[60vw] sm:max-w-[420px] md:w-[min(560px,44vw)] md:max-w-none h-auto object-contain bg-transparent border-0 shadow-none"

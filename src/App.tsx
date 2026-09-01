@@ -18,6 +18,7 @@ import Modal from "./components/Modal";
 import LeadForm from "./components/LeadForm";
 import Reveal from "./components/Reveal";
 import RetentionPopupTrigger from "./components/RetentionPopupTrigger";
+import IntroSplash from "./components/IntroSplash";
 import { LeadModalProvider, useLeadModal } from "./context/LeadModalContext";
 
 function LeadModal() {
@@ -33,6 +34,7 @@ function App() {
   return (
     <LeadModalProvider>
       <div className="min-h-screen pb-[72px] md:pb-0">
+        <IntroSplash />
         <Header />
         <Hero />
 
