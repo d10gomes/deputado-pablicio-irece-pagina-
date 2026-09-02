@@ -41,6 +41,7 @@ export default function VideoVsl() {
               src={embed.url}
               controls
               playsInline
+              preload="metadata"
               className="absolute inset-0 w-full h-full object-cover"
             />
           ) : embed.kind === "iframe" ? (

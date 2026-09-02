@@ -9,6 +9,10 @@ export function parseVideoUrl(raw: string | undefined | null): VideoEmbed {
   const url = (raw ?? "").trim();
   if (!url) return { kind: "empty" };
 
+  if (url.startsWith("/") && /\.(mp4|webm|ogg)$/i.test(url)) {
+    return { kind: "file", url };
+  }
+
   try {
     const u = new URL(url);
     const host = u.hostname.replace(/^www\./, "");
