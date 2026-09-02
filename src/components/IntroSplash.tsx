@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { candidato } from "../data/content";
+import logoOficial from "../assets/logo-oficial.webp";
 
 const SESSION_KEY = "introExibida";
-const DURACAO_MS = 4300;
+const DURACAO_MS = 2550;
 const SAIDA_MS = 450;
 
 function deveExibir() {
@@ -50,13 +51,14 @@ export default function IntroSplash() {
         className="relative flex flex-col items-center px-6 text-center"
         style={{ animation: "introTexto 0.8s ease-out both" }}
       >
-        <span className="uppercase tracking-[0.3em] text-white/50 font-semibold text-xs sm:text-sm mb-4 sm:mb-5">
-          {candidato.cargo}
-        </span>
-        <h2 className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl text-white leading-[1.05]">
-          {candidato.nome}
-        </h2>
-        <div className="mt-6 sm:mt-8 font-display font-extrabold text-7xl sm:text-8xl md:text-9xl leading-none text-brand-yellow-500">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl px-6 py-5 sm:px-10 sm:py-7">
+          <img
+            src={logoOficial}
+            alt={`${candidato.nome} — ${candidato.cargo}`}
+            className="w-56 sm:w-72 md:w-80 h-auto"
+          />
+        </div>
+        <div className="mt-7 sm:mt-9 font-display font-extrabold text-7xl sm:text-8xl md:text-9xl leading-none text-brand-yellow-500">
           {candidato.numero}
         </div>
       </div>
