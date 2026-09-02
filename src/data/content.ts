@@ -27,7 +27,7 @@ export const hero = {
 export const contato = {
   whatsapp: "5571987822591",
   whatsappExibicao: "(71) 98782-2591",
-  email: "pablicioae@hotmail.com",
+  email: "contato@drpablicíomedeiros.com.br",
   cnpjResponsavel: "68.237.185/0001-96",
   instagram: "#",
   facebook: "https://www.facebook.com/pablicio.medeiros",
