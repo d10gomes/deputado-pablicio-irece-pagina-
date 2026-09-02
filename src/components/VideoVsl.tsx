@@ -24,9 +24,9 @@ export default function VideoVsl() {
         </p>
 
         <div
-          className={`group relative rounded-2xl overflow-hidden shadow-2xl aspect-video bg-[#0e1b2a] ring-1 ring-white/10 ${
-            temVideo ? "" : "cursor-default"
-          }`}
+          className={`group relative rounded-2xl overflow-hidden shadow-2xl bg-[#0e1b2a] ring-1 ring-white/10 ${
+            embed.kind === "file" ? "max-w-xs sm:max-w-sm mx-auto aspect-[9/16]" : "aspect-video"
+          } ${temVideo ? "" : "cursor-default"}`}
         >
           {embed.kind === "youtube" || embed.kind === "vimeo" ? (
             <iframe
@@ -42,7 +42,7 @@ export default function VideoVsl() {
               controls
               playsInline
               preload="metadata"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-contain"
             />
           ) : embed.kind === "iframe" ? (
             <iframe
